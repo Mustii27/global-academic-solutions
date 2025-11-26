@@ -9,17 +9,20 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --navy: #04132d;
-      --navy-soft: #071a38;
-      --navy-alt: #0b244a;
-      --gold: #f4b528;
-      --offwhite: #f6f7fb;
-      --text-light: #fdfdfd;
-      --muted: #c7cee3;
+      --dark-bg: #0a0e1a;
+      --dark-secondary: #131824;
+      --dark-card: #1a1f2e;
+      --dark-border: #2a3142;
+      --accent-primary: #6366f1;
+      --accent-secondary: #8b5cf6;
+      --accent-gold: #fbbf24;
+      --text-primary: #f8fafc;
+      --text-secondary: #94a3b8;
+      --text-muted: #64748b;
     }
 
     * {
@@ -30,8 +33,8 @@
 
     body {
       font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: #ffffff;
-      color: #111827;
+      background: var(--dark-bg);
+      color: var(--text-primary);
       line-height: 1.6;
     }
 
@@ -46,19 +49,20 @@
       position: sticky;
       top: 0;
       z-index: 50;
-      background: rgba(4, 19, 45, 0.97);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(255,255,255,0.06);
+      background: rgba(10, 14, 26, 0.95);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--dark-border);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     }
 
     .nav-inner {
-      max-width: 1180px;
+      max-width: 1280px;
       margin: 0 auto;
-      padding: 0.65rem 1.4rem;
+      padding: 1rem 2rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 1rem;
+      gap: 2rem;
     }
 
     .brand {
@@ -68,40 +72,42 @@
     }
 
     .brand img {
-      height: 46px;
+      height: 48px;
       width: auto;
-      border-radius: 4px;
+      border-radius: 8px;
     }
 
     .brand-text {
       display: flex;
       flex-direction: column;
-      gap: 0.05rem;
+      gap: 0.15rem;
     }
 
     .brand-text strong {
-      color: var(--text-light);
-      font-size: 0.96rem;
-      letter-spacing: 0.1em;
+      color: var(--text-primary);
+      font-size: 1rem;
+      letter-spacing: 0.05em;
+      font-weight: 700;
     }
 
     .brand-text span {
-      color: var(--muted);
-      font-size: 0.78rem;
+      color: var(--text-secondary);
+      font-size: 0.8rem;
     }
 
     nav ul {
       list-style: none;
       display: flex;
-      gap: 1.3rem;
-      font-size: 0.9rem;
+      gap: 2rem;
+      font-size: 0.95rem;
     }
 
     nav a {
       position: relative;
-      color: var(--muted);
-      padding-bottom: 0.08rem;
+      color: var(--text-secondary);
+      padding-bottom: 0.2rem;
       font-weight: 500;
+      transition: color 0.3s ease;
     }
 
     nav a::after {
@@ -111,12 +117,12 @@
       bottom: 0;
       width: 0;
       height: 2px;
-      background: var(--gold);
-      transition: width 0.2s ease-out;
+      background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+      transition: width 0.3s ease-out;
     }
 
     nav a:hover {
-      color: #ffffff;
+      color: var(--text-primary);
     }
 
     nav a:hover::after {
@@ -126,198 +132,291 @@
     /* HERO */
 
     .hero {
-      background: radial-gradient(circle at top left, #12326e 0, var(--navy) 45%, #020817 100%);
-      color: var(--text-light);
-      padding: 3.3rem 1.4rem 3.2rem;
+      background: radial-gradient(ellipse at top, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+                  radial-gradient(ellipse at bottom right, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
+                  var(--dark-bg);
+      padding: 5rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 70%;
+      height: 150%;
+      background: radial-gradient(circle, rgba(99, 102, 241, 0.08) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
     }
 
     .hero-inner {
-      max-width: 1180px;
+      max-width: 1280px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: minmax(0, 1.9fr) minmax(0, 1.5fr);
-      gap: 2.8rem;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 4rem;
       align-items: center;
+      position: relative;
+      z-index: 1;
     }
 
     .hero h1 {
-      font-size: clamp(2rem, 4vw, 2.8rem);
-      line-height: 1.2;
-      margin-bottom: 0.9rem;
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 800;
     }
 
     .hero .lead {
-      color: var(--muted);
-      font-size: 1rem;
-      max-width: 34rem;
-      margin-bottom: 1.4rem;
+      color: var(--text-secondary);
+      font-size: 1.15rem;
+      line-height: 1.7;
+      margin-bottom: 2rem;
     }
 
     .hero-tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.45rem;
-      margin-bottom: 1.4rem;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
     }
 
     .hero-tag {
       border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.18);
-      padding: 0.24rem 0.8rem;
-      font-size: 0.78rem;
-      color: var(--muted);
-      background: rgba(3, 12, 32, 0.8);
+      border: 1px solid var(--dark-border);
+      padding: 0.5rem 1.2rem;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      background: var(--dark-card);
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+
+    .hero-tag:hover {
+      border-color: var(--accent-primary);
+      color: var(--text-primary);
+      transform: translateY(-2px);
     }
 
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.75rem;
+      gap: 1rem;
     }
 
     .btn-primary,
     .btn-outline {
-      padding: 0.65rem 1.3rem;
+      padding: 0.85rem 2rem;
       border-radius: 999px;
       border: 1px solid transparent;
-      font-size: 0.9rem;
+      font-size: 1rem;
       cursor: pointer;
       display: inline-flex;
       justify-content: center;
       align-items: center;
-      gap: 0.3rem;
+      gap: 0.5rem;
       font-weight: 600;
+      transition: all 0.3s ease;
     }
 
     .btn-primary {
-      background: var(--gold);
-      border-color: var(--gold);
-      color: #1c1301;
+      background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+      border-color: var(--accent-primary);
+      color: white;
+      box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 15px 40px rgba(99, 102, 241, 0.4);
     }
 
     .btn-outline {
       background: transparent;
-      border-color: rgba(255,255,255,0.5);
-      color: var(--muted);
-      font-weight: 500;
+      border-color: var(--dark-border);
+      color: var(--text-secondary);
     }
 
-    .btn-outline span {
-      font-size: 1.05rem;
+    .btn-outline:hover {
+      border-color: var(--accent-primary);
+      color: var(--text-primary);
+      background: rgba(99, 102, 241, 0.1);
     }
 
     .hero-card {
-      background: linear-gradient(145deg, rgba(8,24,64,0.98), rgba(13,36,88,0.96));
-      border-radius: 1rem;
-      padding: 1.15rem 1.3rem 1.3rem;
-      border: 1px solid rgba(255,255,255,0.08);
-      box-shadow: 0 20px 46px rgba(0,0,0,0.5);
+      background: linear-gradient(145deg, var(--dark-card), var(--dark-secondary));
+      border-radius: 1.5rem;
+      padding: 2rem;
+      border: 1px solid var(--dark-border);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(10px);
     }
 
     .hero-card h2 {
-      font-size: 1rem;
-      margin-bottom: 0.7rem;
+      font-size: 1.4rem;
+      margin-bottom: 1.5rem;
+      color: var(--text-primary);
     }
 
     .hero-card ul {
       list-style: none;
-      font-size: 0.88rem;
-      color: var(--muted);
-      margin-bottom: 0.8rem;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
     }
 
     .hero-card li {
-      margin-bottom: 0.35rem;
+      margin-bottom: 0.75rem;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+
+    .hero-card li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--accent-primary);
+      font-weight: bold;
     }
 
     .hero-meta {
-      font-size: 0.84rem;
-      color: var(--muted);
-      line-height: 1.5;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      padding-top: 1rem;
+      border-top: 1px solid var(--dark-border);
+    }
+
+    .hero-meta p {
+      margin-bottom: 0.5rem;
     }
 
     .hero-meta strong {
-      color: #ffffff;
+      color: var(--text-primary);
+      font-weight: 600;
     }
 
     /* SECTIONS */
 
     section {
-      padding: 2.7rem 1.4rem;
+      padding: 5rem 2rem;
     }
 
     .inner {
-      max-width: 1180px;
+      max-width: 1280px;
       margin: 0 auto;
     }
 
     .section-title {
-      font-size: 1.55rem;
-      margin-bottom: 0.4rem;
-      color: var(--navy);
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+      font-weight: 700;
     }
 
     .section-lead {
-      max-width: 40rem;
-      color: #4b5563;
-      font-size: 0.96rem;
-      margin-bottom: 1.6rem;
+      max-width: 48rem;
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+      margin-bottom: 3rem;
+      line-height: 1.7;
     }
 
     section.alt {
-      background: var(--offwhite);
+      background: var(--dark-secondary);
     }
 
-    /* SERVICES */
+    /* SERVICES - 3 columns layout */
 
     .cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 1.2rem;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
     }
 
     .card {
-      background: #ffffff;
-      border-radius: 0.9rem;
-      padding: 1.05rem 1.15rem 1.15rem;
-      border: 1px solid #e0e4f0;
-      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
+      background: linear-gradient(145deg, var(--dark-card), var(--dark-secondary));
+      border-radius: 1.25rem;
+      padding: 2rem;
+      border: 1px solid var(--dark-border);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: var(--accent-primary);
+      box-shadow: 0 20px 50px rgba(99, 102, 241, 0.2);
+    }
+
+    .card:hover::before {
+      opacity: 1;
     }
 
     .card .tag {
-      font-size: 0.74rem;
+      font-size: 0.75rem;
       text-transform: uppercase;
-      letter-spacing: 0.09em;
-      color: #6b7280;
-      margin-bottom: 0.25rem;
-      font-weight: 600;
+      letter-spacing: 0.1em;
+      color: var(--accent-primary);
+      margin-bottom: 0.75rem;
+      font-weight: 700;
     }
 
     .card h3 {
-      font-size: 0.98rem;
-      margin-bottom: 0.35rem;
-      color: var(--navy);
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+      font-weight: 600;
     }
 
     .card p {
-      font-size: 0.88rem;
-      color: #4b5563;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
     }
 
     /* HOW IT WORKS */
 
     .steps {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 1.15rem;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
       counter-reset: step;
     }
 
     .step {
-      background: #ffffff;
-      border-radius: 0.9rem;
-      padding: 0.95rem 1.05rem 1.1rem;
-      border: 1px dashed #c8d0e5;
+      background: linear-gradient(145deg, var(--dark-card), var(--dark-secondary));
+      border-radius: 1.25rem;
+      padding: 2rem;
+      border: 1px solid var(--dark-border);
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .step:hover {
+      transform: translateY(-5px);
+      border-color: var(--accent-primary);
     }
 
     .step::before {
@@ -326,261 +425,403 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 26px;
-      height: 26px;
-      border-radius: 999px;
-      background: var(--navy);
-      color: var(--text-light);
-      font-size: 0.78rem;
-      margin-bottom: 0.4rem;
-      font-weight: 600;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+      color: white;
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+      box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3);
     }
 
     .step h3 {
-      font-size: 0.94rem;
-      margin-bottom: 0.25rem;
-      color: var(--navy);
+      font-size: 1.15rem;
+      margin-bottom: 0.75rem;
+      color: var(--text-primary);
+      font-weight: 600;
     }
 
     .step p {
-      font-size: 0.88rem;
-      color: #4b5563;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* WHY WORK WITH US - New Section */
+
+    .why-us-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+
+    .why-card {
+      background: linear-gradient(145deg, var(--dark-card), var(--dark-secondary));
+      border-radius: 1.25rem;
+      padding: 2.5rem;
+      border: 1px solid var(--dark-border);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .why-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--accent-primary);
+      box-shadow: 0 20px 50px rgba(99, 102, 241, 0.2);
+    }
+
+    .why-card .icon {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+
+    .why-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    .why-card p {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
     }
 
     /* PRICING */
 
     .pricing-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 1.15rem;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
     }
 
     .price-card {
-      background: #ffffff;
-      border-radius: 0.9rem;
-      padding: 1.05rem 1.2rem 1.25rem;
-      border: 1px solid #dde2f3;
+      background: linear-gradient(145deg, var(--dark-card), var(--dark-secondary));
+      border-radius: 1.25rem;
+      padding: 2.5rem;
+      border: 1px solid var(--dark-border);
       position: relative;
+      transition: all 0.3s ease;
     }
 
     .price-card.featured {
-      border-color: var(--gold);
-      box-shadow: 0 18px 36px rgba(15, 23, 42, 0.14);
+      border-color: var(--accent-primary);
+      box-shadow: 0 25px 60px rgba(99, 102, 241, 0.3);
+      transform: scale(1.05);
+    }
+
+    .price-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--accent-primary);
+    }
+
+    .price-card.featured:hover {
+      transform: scale(1.05) translateY(-5px);
     }
 
     .price-card h3 {
-      font-size: 0.98rem;
-      margin-bottom: 0.25rem;
-      color: var(--navy);
+      font-size: 1.35rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary);
+      font-weight: 600;
     }
 
     .price {
-      font-size: 1.4rem;
-      font-weight: 700;
-      margin: 0.3rem 0 0.65rem;
-      color: var(--navy);
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin: 1rem 0 1.5rem;
+      background: linear-gradient(135deg, var(--accent-gold), var(--accent-primary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
     .price small {
-      font-size: 0.8rem;
+      font-size: 1rem;
       font-weight: 400;
-      color: #6b7280;
+      color: var(--text-secondary);
     }
 
     .price-card ul {
       list-style: none;
-      font-size: 0.88rem;
-      color: #4b5563;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
     }
 
     .price-card li {
-      margin-bottom: 0.3rem;
+      margin-bottom: 0.75rem;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+
+    .price-card li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--accent-primary);
+      font-weight: bold;
     }
 
     /* BLOG */
 
     .blog-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.2rem;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
     }
 
     .post {
-      background: #ffffff;
-      border-radius: 0.9rem;
-      padding: 1rem 1.1rem 1.1rem;
-      border: 1px solid #e1e5f1;
+      background: linear-gradient(145deg, var(--dark-card), var(--dark-secondary));
+      border-radius: 1.25rem;
+      padding: 2rem;
+      border: 1px solid var(--dark-border);
+      transition: all 0.3s ease;
+    }
+
+    .post:hover {
+      transform: translateY(-5px);
+      border-color: var(--accent-primary);
+      box-shadow: 0 20px 50px rgba(99, 102, 241, 0.2);
     }
 
     .post h3 {
-      font-size: 0.98rem;
-      margin-bottom: 0.3rem;
-      color: var(--navy);
+      font-size: 1.2rem;
+      margin-bottom: 0.75rem;
+      color: var(--text-primary);
+      font-weight: 600;
+      line-height: 1.4;
     }
 
     .post .meta {
-      font-size: 0.78rem;
-      color: #6b7280;
-      margin-bottom: 0.4rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
     }
 
     .post p {
-      font-size: 0.88rem;
-      color: #4b5563;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
     }
 
     /* CONTACT */
 
     .contact-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.2fr);
-      gap: 2rem;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 3rem;
       align-items: flex-start;
     }
 
     form {
-      background: #ffffff;
-      border-radius: 0.9rem;
-      padding: 1.1rem 1.2rem 1.2rem;
-      border: 1px solid #dde2f3;
-      box-shadow: 0 16px 38px rgba(15, 23, 42, 0.12);
+      background: linear-gradient(145deg, var(--dark-card), var(--dark-secondary));
+      border-radius: 1.25rem;
+      padding: 2.5rem;
+      border: 1px solid var(--dark-border);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
     }
 
     label {
       display: block;
-      font-size: 0.84rem;
-      margin-bottom: 0.2rem;
-      color: #374151;
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary);
       font-weight: 500;
     }
 
     input, textarea {
       width: 100%;
-      padding: 0.52rem 0.7rem;
-      border-radius: 0.4rem;
-      border: 1px solid #cfd5e6;
-      font-size: 0.9rem;
+      padding: 0.85rem 1rem;
+      border-radius: 0.75rem;
+      border: 1px solid var(--dark-border);
+      font-size: 0.95rem;
       font-family: inherit;
-      margin-bottom: 0.75rem;
+      margin-bottom: 1.5rem;
+      background: var(--dark-bg);
+      color: var(--text-primary);
+      transition: all 0.3s ease;
+    }
+
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: var(--accent-primary);
+      box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
     }
 
     textarea {
-      min-height: 118px;
+      min-height: 140px;
       resize: vertical;
     }
 
     form button {
-      margin-top: 0.25rem;
+      margin-top: 0.5rem;
       border: none;
       cursor: pointer;
+      width: 100%;
+    }
+
+    .contact-details {
+      background: linear-gradient(145deg, var(--dark-card), var(--dark-secondary));
+      border-radius: 1.25rem;
+      padding: 2.5rem;
+      border: 1px solid var(--dark-border);
+      height: fit-content;
     }
 
     .contact-details p {
-      font-size: 0.93rem;
-      color: #374151;
-      margin-bottom: 0.35rem;
+      font-size: 1rem;
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+      line-height: 1.7;
     }
 
     .contact-details strong {
-      color: var(--navy);
+      color: var(--text-primary);
+      font-weight: 600;
     }
 
     /* POLICIES */
 
     .policies {
-      font-size: 0.86rem;
-      color: #4b5563;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
     }
 
     .policies h3 {
-      font-size: 0.98rem;
-      margin-bottom: 0.3rem;
-      color: var(--navy);
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      margin-top: 2rem;
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    .policies h3:first-of-type {
+      margin-top: 0;
     }
 
     .policies p {
-      margin-bottom: 0.4rem;
+      margin-bottom: 1rem;
     }
 
     .policies ul {
-      margin-left: 1.1rem;
-      margin-bottom: 0.6rem;
+      margin-left: 1.5rem;
+      margin-bottom: 1.5rem;
     }
 
     .policies li {
-      margin-bottom: 0.25rem;
+      margin-bottom: 0.5rem;
     }
 
     /* FOOTER */
 
     footer {
-      background: var(--navy);
-      color: var(--muted);
-      padding: 1.6rem 1.4rem 1.9rem;
-      font-size: 0.8rem;
+      background: var(--dark-secondary);
+      color: var(--text-secondary);
+      padding: 3rem 2rem;
+      font-size: 0.9rem;
+      border-top: 1px solid var(--dark-border);
     }
 
     footer .inner {
-      max-width: 1180px;
-      margin: 0 auto;
-    }
-
-    footer p {
-      max-width: 54rem;
+      max-width: 1280px;
       margin: 0 auto;
       text-align: center;
     }
 
+    footer p {
+      max-width: 58rem;
+      margin: 0 auto 1.5rem;
+      line-height: 1.7;
+    }
+
     footer .brand {
-      font-weight: 600;
-      color: #ffffff;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    footer .copyright {
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--dark-border);
+      color: var(--text-muted);
+      font-size: 0.85rem;
     }
 
     /* WHATSAPP FLOATING BUTTON */
 
     .whatsapp-fab {
       position: fixed;
-      right: 18px;
-      bottom: 18px;
-      background: #25D366;
+      right: 24px;
+      bottom: 24px;
+      background: linear-gradient(135deg, #25D366, #128C7E);
       color: #ffffff;
-      width: 52px;
-      height: 52px;
+      width: 60px;
+      height: 60px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 26px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+      font-size: 28px;
+      box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
       z-index: 60;
+      transition: all 0.3s ease;
     }
 
     .whatsapp-fab:hover {
-      background: #1ebe5d;
+      background: linear-gradient(135deg, #128C7E, #075E54);
+      transform: scale(1.1);
+      box-shadow: 0 15px 40px rgba(37, 211, 102, 0.5);
     }
 
     /* RESPONSIVE */
+
+    @media (max-width: 1024px) {
+      .cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .steps {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .pricing-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .why-us-grid {
+        grid-template-columns: 1fr;
+      }
+    }
 
     @media (max-width: 900px) {
       .nav-inner {
         flex-direction: column;
         align-items: flex-start;
+        padding: 1rem 1.5rem;
       }
 
       nav ul {
         flex-wrap: wrap;
-        gap: 0.8rem;
-        font-size: 0.86rem;
+        gap: 1.5rem;
+        font-size: 0.9rem;
       }
 
       .hero-inner {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 1.8rem;
+        grid-template-columns: 1fr;
+        gap: 3rem;
       }
 
       .hero {
-        padding-top: 2.6rem;
-        padding-bottom: 2.6rem;
+        padding: 3.5rem 1.5rem;
       }
 
       .hero-card {
@@ -588,11 +829,11 @@
       }
 
       section {
-        padding: 2.3rem 1.2rem;
+        padding: 3.5rem 1.5rem;
       }
 
       .contact-grid {
-        grid-template-columns: minmax(0, 1fr);
+        grid-template-columns: 1fr;
       }
     }
 
@@ -602,20 +843,48 @@
       }
 
       .hero h1 {
-        font-size: 1.8rem;
+        font-size: 2rem;
       }
 
       .hero-actions {
         flex-direction: column;
-        align-items: flex-start;
+        width: 100%;
+      }
+
+      .btn-primary, .btn-outline {
+        width: 100%;
       }
 
       .whatsapp-fab {
-        width: 46px;
-        height: 46px;
+        width: 52px;
+        height: 52px;
         font-size: 24px;
-        right: 14px;
-        bottom: 14px;
+        right: 16px;
+        bottom: 16px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .steps {
+        grid-template-columns: 1fr;
+      }
+
+      .pricing-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .price-card.featured {
+        transform: scale(1);
+      }
+
+      .blog-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-title {
+        font-size: 2rem;
       }
     }
   </style>
@@ -634,6 +903,7 @@
     <nav>
       <ul>
         <li><a href="#services">Services</a></li>
+        <li><a href="#why-us">Why Us</a></li>
         <li><a href="#how">How it works</a></li>
         <li><a href="#pricing">Pricing</a></li>
         <li><a href="#blog">Blog</a></li>
@@ -666,17 +936,14 @@
     </div>
 
     <aside class="hero-card">
-      <h2>Why students work with us</h2>
-      <ul>
-        <li>Support aligned with UK and international university standards.</li>
-        <li>Help to interpret briefs, plan structure and improve academic tone.</li>
-        <li>Pre-submission checks for similarity and AI indicators where requested.</li>
-        <li>Fast, private communication via email and messaging.</li>
-      </ul>
+      <h2>Quick Contact</h2>
       <div class="hero-meta">
-        <p><strong>Email:</strong> contact@globalacademicsolutions.com</p>
+        <p><strong>Email:</strong> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="dcbfb3b2a8bdbfa89cbbb0b3bebdb0bdbfbdb8b9b1b5bfafb3b0a9a8b5b3b2aff2bfb3b1">[email&#160;protected]</a></p>
         <p><strong>UK (WhatsApp / calls):</strong> +44 7707 788365</p>
         <p><strong>Dubai (WhatsApp / calls):</strong> +971 56 558 7900</p>
+        <p style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--dark-border);">
+          Fast, private communication via email and messaging. Typical reply time: within a few working hours.
+        </p>
       </div>
     </aside>
   </div>
@@ -730,7 +997,42 @@
   </div>
 </section>
 
-<section id="how" class="alt">
+<section id="why-us" class="alt">
+  <div class="inner">
+    <h2 class="section-title">Why Students Work With Us</h2>
+    <p class="section-lead">
+      We provide more than just academic help – we deliver a comprehensive support system designed for student success with integrity and excellence.
+    </p>
+
+    <div class="why-us-grid">
+      <article class="why-card">
+        <span class="icon">🎓</span>
+        <h3>UK & International Standards</h3>
+        <p>Our support is aligned with UK and international university standards. We understand the expectations of top institutions and help you meet them with confidence and academic rigor.</p>
+      </article>
+
+      <article class="why-card">
+        <span class="icon">💡</span>
+        <h3>Expert Guidance</h3>
+        <p>We help you interpret assignment briefs, plan effective structures, and improve your academic tone. Our experts guide you through every step while ensuring you maintain your unique voice.</p>
+      </article>
+
+      <article class="why-card">
+        <span class="icon">🔒</span>
+        <h3>Confidential & Secure</h3>
+        <p>Your privacy is our priority. All communications are confidential, and we never share your work or personal information. Fast, private support via email and secure messaging platforms.</p>
+      </article>
+
+      <article class="why-card">
+        <span class="icon">✨</span>
+        <h3>Pre-Submission Checks</h3>
+        <p>Get peace of mind with our pre-submission similarity and AI indicator checks. We help you identify potential issues and provide actionable guidance to improve your work before final submission.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="how">
   <div class="inner">
     <h2 class="section-title">How it works</h2>
     <p class="section-lead">
@@ -761,7 +1063,7 @@
   </div>
 </section>
 
-<section id="pricing">
+<section id="pricing" class="alt">
   <div class="inner">
     <h2 class="section-title">Example pricing</h2>
     <p class="section-lead">
@@ -791,7 +1093,7 @@
 
       <article class="price-card">
         <h3>Dissertation projects</h3>
-        <p class="price">From £180 <small>per project</small></p>
+        <p class="price">£300 <small>per project</small></p>
         <ul>
           <li>Chapter-by-chapter feedback and support.</li>
           <li>Guidance on methodology, analysis and discussion.</li>
@@ -802,7 +1104,7 @@
   </div>
 </section>
 
-<section id="blog" class="alt">
+<section id="blog">
   <div class="inner">
     <h2 class="section-title">Blog & academic tips</h2>
     <p class="section-lead">
@@ -849,7 +1151,6 @@
 
     <div class="contact-grid">
       <div>
-        <!-- Replace YOUR_EMAIL_HERE with your email address used for FormSubmit -->
         <form action="https://formsubmit.co/mustajab.ahmedd@gmail.com" method="POST">
           <input type="hidden" name="_captcha" value="false">
           <input type="hidden" name="_subject" value="New enquiry from Global Academic Solutions website">
@@ -872,11 +1173,13 @@
       </div>
 
       <div class="contact-details">
-        <p><strong>Email:</strong> contact@globalacademicsolutions.com</p>
+        <p><strong>Email:</strong> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="eb8884859f8a889fab8c8784898a878a888a8f8e8682889884879e9f82848598c5888486">[email&#160;protected]</a></p>
         <p><strong>UK (WhatsApp / calls):</strong> +44 7707 788365</p>
         <p><strong>Dubai (WhatsApp / calls):</strong> +971 56 558 7900</p>
         <p><strong>Typical reply time:</strong> within a few working hours.</p>
-        <p>You can also send your documents directly by email if you only require editing or Turnitin / AI checks. We confirm what is possible and the exact fee before any support starts.</p>
+        <p style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--dark-border);">
+          You can also send your documents directly by email if you only require editing or Turnitin / AI checks. We confirm what is possible and the exact fee before any support starts.
+        </p>
       </div>
     </div>
   </div>
@@ -898,14 +1201,14 @@
 
     <div>
       <h3>Academic integrity policy</h3>
-      <p>Your university’s academic integrity rules always take priority. You remain responsible for your own submissions and for understanding how external support may be used.</p>
+      <p>Your university's academic integrity rules always take priority. You remain responsible for your own submissions and for understanding how external support may be used.</p>
       <ul>
         <li>You must not present any work created by another person as your own original submission.</li>
         <li>Our comments, edits and examples are for learning and improvement; you decide what to adopt or change.</li>
         <li>Similarity and AI checks are indicative only and cannot guarantee a particular Turnitin score or system response.</li>
         <li>If your institution restricts the use of external support, you must follow those rules.</li>
       </ul>
-      <p>By using our services, you confirm that you will use all feedback and guidance in a way that is consistent with your institution’s regulations and that you remain fully responsible for how your work is submitted and assessed.</p>
+      <p>By using our services, you confirm that you will use all feedback and guidance in a way that is consistent with your institution's regulations and that you remain fully responsible for how your work is submitted and assessed.</p>
     </div>
   </div>
 </section>
@@ -914,9 +1217,12 @@
   <div class="inner">
     <p>
       <span class="brand">Global Academic Solutions</span> provides expert academic support including tutoring, guidance on assignments and dissertations,
-      editing and proofreading, and Turnitin / AI-content checks. All work must comply with your institution’s academic integrity policies;
+      editing and proofreading, and Turnitin / AI-content checks. All work must comply with your institution's academic integrity policies;
       you remain responsible for your own submissions and grades.
     </p>
+    <div class="copyright">
+      <p>All rights reserved © 2025 Global Academic Solutions</p>
+    </div>
   </div>
 </footer>
 
@@ -925,5 +1231,5 @@
   &#128172;
 </a>
 
-</body>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
 </html>
