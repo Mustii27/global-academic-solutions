@@ -1,0 +1,693 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2639
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 <!doctype html>\
+<html lang="en">\
+<head>\
+  <meta charset="utf-8" />\
+  <title>Global Academic Solutions | Expert support for students</title>\
+  <meta name="viewport" content="width=device-width, initial-scale=1" />\
+  <meta name="description" content="Global Academic Solutions offers expert tutoring, assignments and dissertation support, Turnitin plagiarism and AI checks, and academic editing for students worldwide.">\
+\
+  <style>\
+    :root \{\
+      --navy: #051633;\
+      --navy-light: #0b244a;\
+      --gold: #f4b528;\
+      --offwhite: #f7f7fb;\
+      --text: #fdfdfd;\
+      --muted: #cfd5e6;\
+      --accent: #3178ff;\
+    \}\
+\
+    * \{\
+      box-sizing: border-box;\
+      margin: 0;\
+      padding: 0;\
+    \}\
+\
+    body \{\
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;\
+      background: #ffffff;\
+      color: #222;\
+      line-height: 1.6;\
+    \}\
+\
+    a \{\
+      color: inherit;\
+      text-decoration: none;\
+    \}\
+\
+    /* HEADER / NAV */\
+\
+    header \{\
+      background: var(--navy);\
+      color: var(--text);\
+      padding: 1rem 7vw;\
+      position: sticky;\
+      top: 0;\
+      z-index: 100;\
+    \}\
+\
+    .nav-container \{\
+      display: flex;\
+      align-items: center;\
+      justify-content: space-between;\
+      gap: 1rem;\
+    \}\
+\
+    .brand \{\
+      display: flex;\
+      align-items: center;\
+      gap: 0.75rem;\
+    \}\
+\
+    .brand img \{\
+      height: 56px;\
+      width: auto;\
+      border-radius: 4px;\
+    \}\
+\
+    .brand-text \{\
+      display: flex;\
+      flex-direction: column;\
+      gap: 0.1rem;\
+    \}\
+\
+    .brand-text span \{\
+      font-size: 0.8rem;\
+      color: var(--muted);\
+    \}\
+\
+    .brand-text strong \{\
+      font-size: 1.05rem;\
+      letter-spacing: 0.04em;\
+    \}\
+\
+    nav ul \{\
+      list-style: none;\
+      display: flex;\
+      gap: 1.5rem;\
+      font-size: 0.95rem;\
+    \}\
+\
+    nav li a \{\
+      position: relative;\
+      padding-bottom: 0.1rem;\
+    \}\
+\
+    nav li a::after \{\
+      content: "";\
+      position: absolute;\
+      left: 0;\
+      bottom: 0;\
+      width: 0;\
+      height: 2px;\
+      background: var(--gold);\
+      transition: width 0.2s ease-out;\
+    \}\
+\
+    nav li a:hover::after \{\
+      width: 100%;\
+    \}\
+\
+    /* HERO */\
+\
+    .hero \{\
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 50%, #09192f 100%);\
+      color: var(--text);\
+      padding: 4rem 7vw 3rem;\
+      display: grid;\
+      grid-template-columns: minmax(0, 2.1fr) minmax(0, 1.4fr);\
+      gap: 3rem;\
+      align-items: center;\
+    \}\
+\
+    .hero h1 \{\
+      font-size: clamp(2.1rem, 4vw, 2.7rem);\
+      line-height: 1.2;\
+      margin-bottom: 1rem;\
+    \}\
+\
+    .hero p.lead \{\
+      font-size: 1.02rem;\
+      color: var(--muted);\
+      max-width: 32rem;\
+      margin-bottom: 1.5rem;\
+    \}\
+\
+    .hero-badges \{\
+      display: flex;\
+      flex-wrap: wrap;\
+      gap: 0.5rem;\
+      margin-bottom: 1.5rem;\
+    \}\
+\
+    .hero-badge \{\
+      border: 1px solid rgba(255,255,255,0.18);\
+      border-radius: 999px;\
+      padding: 0.25rem 0.75rem;\
+      font-size: 0.8rem;\
+      color: var(--muted);\
+    \}\
+\
+    .hero-actions \{\
+      display: flex;\
+      flex-wrap: wrap;\
+      gap: 0.75rem;\
+    \}\
+\
+    .btn-primary,\
+    .btn-outline \{\
+      padding: 0.7rem 1.3rem;\
+      font-size: 0.95rem;\
+      border-radius: 999px;\
+      border: 1px solid transparent;\
+      cursor: pointer;\
+      display: inline-flex;\
+      align-items: center;\
+      justify-content: center;\
+      gap: 0.3rem;\
+    \}\
+\
+    .btn-primary \{\
+      background: var(--gold);\
+      color: #1b1605;\
+      border-color: var(--gold);\
+      font-weight: 600;\
+    \}\
+\
+    .btn-outline \{\
+      background: transparent;\
+      color: var(--muted);\
+      border-color: rgba(255,255,255,0.5);\
+    \}\
+\
+    .hero-card \{\
+      background: rgba(4, 9, 21, 0.84);\
+      border-radius: 1.1rem;\
+      padding: 1.3rem 1.5rem;\
+      border: 1px solid rgba(255,255,255,0.08);\
+      box-shadow: 0 18px 40px rgba(0,0,0,0.35);\
+    \}\
+\
+    .hero-card h2 \{\
+      font-size: 1rem;\
+      margin-bottom: 0.75rem;\
+    \}\
+\
+    .hero-card ul \{\
+      list-style: none;\
+      font-size: 0.9rem;\
+      color: var(--muted);\
+    \}\
+\
+    .hero-card li \{\
+      margin-bottom: 0.35rem;\
+    \}\
+\
+    .hero-contact \{\
+      margin-top: 0.9rem;\
+      font-size: 0.87rem;\
+      color: var(--muted);\
+    \}\
+\
+    /* GENERIC SECTIONS */\
+\
+    section \{\
+      padding: 3.2rem 7vw;\
+    \}\
+\
+    section:nth-of-type(even) \{\
+      background: var(--offwhite);\
+    \}\
+\
+    .section-title \{\
+      font-size: 1.6rem;\
+      margin-bottom: 0.75rem;\
+      color: var(--navy);\
+    \}\
+\
+    .section-lead \{\
+      color: #555;\
+      max-width: 40rem;\
+      margin-bottom: 1.8rem;\
+      font-size: 0.98rem;\
+    \}\
+\
+    /* SERVICES */\
+\
+    .cards \{\
+      display: grid;\
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));\
+      gap: 1.4rem;\
+    \}\
+\
+    .card \{\
+      background: #ffffff;\
+      border-radius: 0.9rem;\
+      padding: 1.1rem 1.1rem 1.2rem;\
+      border: 1px solid #e1e4ef;\
+      box-shadow: 0 10px 26px rgba(6, 21, 52, 0.06);\
+    \}\
+\
+    .card h3 \{\
+      font-size: 1rem;\
+      margin-bottom: 0.4rem;\
+      color: var(--navy);\
+    \}\
+\
+    .card p \{\
+      font-size: 0.9rem;\
+      color: #555;\
+    \}\
+\
+    .tag \{\
+      display: inline-block;\
+      font-size: 0.75rem;\
+      text-transform: uppercase;\
+      letter-spacing: 0.08em;\
+      color: #777;\
+      margin-bottom: 0.35rem;\
+    \}\
+\
+    /* HOW IT WORKS */\
+\
+    .steps \{\
+      display: grid;\
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));\
+      gap: 1.2rem;\
+      counter-reset: step;\
+    \}\
+\
+    .step \{\
+      background: #ffffff;\
+      border-radius: 0.9rem;\
+      padding: 1rem 1.1rem 1.1rem;\
+      border: 1px dashed #c6cee3;\
+    \}\
+\
+    .step::before \{\
+      counter-increment: step;\
+      content: "0" counter(step);\
+      display: inline-flex;\
+      align-items: center;\
+      justify-content: center;\
+      width: 28px;\
+      height: 28px;\
+      border-radius: 999px;\
+      background: var(--navy);\
+      color: var(--text);\
+      font-size: 0.8rem;\
+      margin-bottom: 0.5rem;\
+    \}\
+\
+    .step h3 \{\
+      font-size: 0.98rem;\
+      margin-bottom: 0.3rem;\
+      color: var(--navy);\
+    \}\
+\
+    .step p \{\
+      font-size: 0.9rem;\
+      color: #555;\
+    \}\
+\
+    /* PRICING */\
+\
+    .pricing-grid \{\
+      display: grid;\
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));\
+      gap: 1.2rem;\
+    \}\
+\
+    .price-card \{\
+      background: #ffffff;\
+      border-radius: 0.9rem;\
+      padding: 1.1rem 1.2rem 1.3rem;\
+      border: 1px solid #dde2f0;\
+      position: relative;\
+    \}\
+\
+    .price-card.featured \{\
+      border-color: var(--gold);\
+      box-shadow: 0 16px 32px rgba(0,0,0,0.08);\
+    \}\
+\
+    .price-card h3 \{\
+      font-size: 1rem;\
+      margin-bottom: 0.2rem;\
+      color: var(--navy);\
+    \}\
+\
+    .price \{\
+      font-size: 1.5rem;\
+      font-weight: 700;\
+      margin: 0.3rem 0 0.7rem;\
+      color: var(--navy);\
+    \}\
+\
+    .price small \{\
+      font-size: 0.8rem;\
+      font-weight: 400;\
+      color: #777;\
+    \}\
+\
+    .price-card ul \{\
+      list-style: none;\
+      font-size: 0.9rem;\
+      color: #555;\
+    \}\
+\
+    .price-card li \{\
+      margin-bottom: 0.3rem;\
+    \}\
+\
+    /* CONTACT */\
+\
+    .contact-grid \{\
+      display: grid;\
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.2fr);\
+      gap: 2rem;\
+      align-items: flex-start;\
+    \}\
+\
+    form \{\
+      background: #ffffff;\
+      border-radius: 0.9rem;\
+      padding: 1.2rem 1.3rem 1.3rem;\
+      border: 1px solid #dde2f0;\
+      box-shadow: 0 16px 40px rgba(5, 25, 60, 0.08);\
+    \}\
+\
+    label \{\
+      display: block;\
+      font-size: 0.85rem;\
+      margin-bottom: 0.25rem;\
+      color: #333;\
+    \}\
+\
+    input, textarea \{\
+      width: 100%;\
+      padding: 0.6rem 0.7rem;\
+      border-radius: 0.4rem;\
+      border: 1px solid #cfd5e6;\
+      margin-bottom: 0.8rem;\
+      font-size: 0.9rem;\
+      font-family: inherit;\
+    \}\
+\
+    textarea \{\
+      min-height: 120px;\
+      resize: vertical;\
+    \}\
+\
+    .contact-details p \{\
+      font-size: 0.95rem;\
+      margin-bottom: 0.4rem;\
+      color: #333;\
+    \}\
+\
+    .contact-details strong \{\
+      color: var(--navy);\
+    \}\
+\
+    /* FOOTER */\
+\
+    footer \{\
+      background: var(--navy);\
+      color: var(--muted);\
+      padding: 1.8rem 7vw 2rem;\
+      font-size: 0.8rem;\
+    \}\
+\
+    footer p \{\
+      max-width: 56rem;\
+      margin: 0 auto;\
+      text-align: center;\
+    \}\
+\
+    footer span.brand \{\
+      font-weight: 600;\
+      color: #ffffff;\
+    \}\
+\
+    /* RESPONSIVE */\
+\
+    @media (max-width: 900px) \{\
+      .hero \{\
+        grid-template-columns: minmax(0, 1fr);\
+      \}\
+\
+      .hero-card \{\
+        order: -1;\
+      \}\
+\
+      .nav-container \{\
+        flex-direction: column;\
+        align-items: flex-start;\
+      \}\
+\
+      nav ul \{\
+        gap: 1rem;\
+        margin-top: 0.4rem;\
+        flex-wrap: wrap;\
+      \}\
+\
+      .contact-grid \{\
+        grid-template-columns: minmax(0, 1fr);\
+      \}\
+    \}\
+  </style>\
+</head>\
+\
+<body>\
+\
+  <!-- HEADER -->\
+  <header>\
+    <div class="nav-container">\
+      <div class="brand">\
+        <!-- Replace src with the path to your logo file -->\
+        <img src="logo-global-academic-solutions.png" alt="Global Academic Solutions Logo">\
+        <div class="brand-text">\
+          <strong>Global Academic Solutions</strong>\
+          <span>Expert support for students</span>\
+        </div>\
+      </div>\
+      <nav>\
+        <ul>\
+          <li><a href="#services">Services</a></li>\
+          <li><a href="#how">How it works</a></li>\
+          <li><a href="#pricing">Pricing</a></li>\
+          <li><a href="#contact">Contact</a></li>\
+        </ul>\
+      </nav>\
+    </div>\
+  </header>\
+\
+  <!-- HERO -->\
+  <section class="hero">\
+    <div>\
+      <h1>Expert support for students worldwide.</h1>\
+      <p class="lead">\
+        Academic tutoring, assignment and dissertation guidance, Turnitin plagiarism and AI checks,\
+        and precise editing \'97 delivered with strict confidentiality.\
+      </p>\
+\
+      <div class="hero-badges">\
+        <span class="hero-badge">Assignments & Coursework</span>\
+        <span class="hero-badge">Dissertations & Proposals</span>\
+        <span class="hero-badge">Turnitin & AI-check reports</span>\
+      </div>\
+\
+      <div class="hero-actions">\
+        <a href="#contact" class="btn-primary">Request help</a>\
+        <a href="#services" class="btn-outline">View services</a>\
+      </div>\
+    </div>\
+\
+    <aside class="hero-card">\
+      <h2>Why students choose us</h2>\
+      <ul>\
+        <li>Targeted help with UK and international university standards.</li>\
+        <li>Clear structure, argument and academic tone in your work.</li>\
+        <li>Turnitin similarity and AI-content screening before submission.</li>\
+        <li>Private, one-to-one communication with quick response times.</li>\
+      </ul>\
+\
+      <div class="hero-contact">\
+        <div><strong>Email:</strong> contact@globalacademicsolutions.com</div>\
+        <div><strong>UK:</strong> +44 7707 788365</div>\
+        <div><strong>Dubai:</strong> +971 56 558 7900</div>\
+      </div>\
+    </aside>\
+  </section>\
+\
+  <!-- SERVICES -->\
+  <section id="services">\
+    <h2 class="section-title">Services</h2>\
+    <p class="section-lead">\
+      Support covers the full academic cycle \'97 from understanding the brief, to planning and drafting,\
+      to final checks before submission.\
+    </p>\
+\
+    <div class="cards">\
+      <article class="card">\
+        <div class="tag">Tutoring</div>\
+        <h3>Subject tutoring & concept support</h3>\
+        <p>One-to-one online sessions that break down difficult topics, explain theories, and prepare you for exams and assessments.</p>\
+      </article>\
+\
+      <article class="card">\
+        <div class="tag">Assignments</div>\
+        <h3>Assignments & coursework guidance</h3>\
+        <p>Help with understanding the question, building a structure, improving argument flow, and aligning with marking criteria.</p>\
+      </article>\
+\
+      <article class="card">\
+        <div class="tag">Dissertations</div>\
+        <h3>Dissertation & proposal support</h3>\
+        <p>Topic refinement, research strategy, chapter outlines, feedback on drafts, and support with discussion and conclusions.</p>\
+      </article>\
+\
+      <article class="card">\
+        <div class="tag">Checking</div>\
+        <h3>Turnitin & AI-content checks</h3>\
+        <p>Similarity checking, AI-content screenings, and guidance on how to reduce overlap while protecting your own voice.</p>\
+      </article>\
+\
+      <article class="card">\
+        <div class="tag">Editing</div>\
+        <h3>Editing & proofreading</h3>\
+        <p>Language, academic style, referencing corrections (Harvard / APA / others), and consistency checks across the full document.</p>\
+      </article>\
+\
+      <article class="card">\
+        <div class="tag">Ongoing</div>\
+        <h3>Long-term academic support</h3>\
+        <p>Term-long or year-long support packages for repeated assignments, modules, and dissertation milestones.</p>\
+      </article>\
+    </div>\
+  </section>\
+\
+  <!-- HOW IT WORKS -->\
+  <section id="how">\
+    <h2 class="section-title">How it works</h2>\
+    <p class="section-lead">\
+      Simple, transparent process. You stay in control at every stage.\
+    </p>\
+\
+    <div class="steps">\
+      <article class="step">\
+        <h3>Send your brief</h3>\
+        <p>Share your assignment or dissertation requirements, rubric, deadline, and any university guidance.</p>\
+      </article>\
+\
+      <article class="step">\
+        <h3>Receive a plan</h3>\
+        <p>We outline how we will support you: key tasks, realistic timelines, and an estimated number of sessions or reviews.</p>\
+      </article>\
+\
+      <article class="step">\
+        <h3>Work together</h3>\
+        <p>We deliver tutoring, feedback, structure guidance, and checks according to the plan, with clear communication.</p>\
+      </article>\
+\
+      <article class="step">\
+        <h3>Final review</h3>\
+        <p>We perform final editing, referencing checks, and optional Turnitin/AI screening before you submit.</p>\
+      </article>\
+    </div>\
+  </section>\
+\
+  <!-- PRICING -->\
+  <section id="pricing">\
+    <h2 class="section-title">Example pricing</h2>\
+    <p class="section-lead">\
+      Pricing varies by level, length, and deadline. These examples are guide ranges only; final quotes are confirmed after we review your brief.\
+    </p>\
+\
+    <div class="pricing-grid">\
+      <article class="price-card">\
+        <h3>Tutoring sessions</h3>\
+        <p class="price">\'a320\'96\'a335 <small>per hour</small></p>\
+        <ul>\
+          <li>Live 1-to-1 online support</li>\
+          <li>Screen-share explanations and worked examples</li>\
+          <li>Follow-up summary notes after the session</li>\
+        </ul>\
+      </article>\
+\
+      <article class="price-card featured">\
+        <h3>Assignments & coursework</h3>\
+        <p class="price">From \'a340 <small>per task</small></p>\
+        <ul>\
+          <li>Outline, structure and feedback on drafts</li>\
+          <li>Editing, language and reference checks</li>\
+          <li>Optional Turnitin similarity review</li>\
+        </ul>\
+      </article>\
+\
+      <article class="price-card">\
+        <h3>Dissertation support</h3>\
+        <p class="price">From \'a3180 <small>per project</small></p>\
+        <ul>\
+          <li>Chapter-by-chapter guidance</li>\
+          <li>Literature review and discussion support</li>\
+          <li>Final proofread and format check</li>\
+        </ul>\
+      </article>\
+    </div>\
+  </section>\
+\
+  <!-- CONTACT -->\
+  <section id="contact">\
+    <h2 class="section-title">Contact</h2>\
+    <p class="section-lead">\
+      Send your brief and deadline. We respond as quickly as possible with next steps and a clear, written quote.\
+    </p>\
+\
+    <div class="contact-grid">\
+      <div>\
+        <form>\
+          <label for="name">Name</label>\
+          <input id="name" type="text" name="name" placeholder="Your full name">\
+\
+          <label for="email">Email</label>\
+          <input id="email" type="email" name="email" placeholder="you@example.com">\
+\
+          <label for="level">Study level (e.g. Undergraduate, MSc)</label>\
+          <input id="level" type="text" name="level" placeholder="e.g. Undergraduate, MSc">\
+\
+          <label for="details">Brief & deadline</label>\
+          <textarea id="details" name="details" placeholder="Module name, word count, deadline, special instructions"></textarea>\
+\
+          <button type="submit" class="btn-primary">Send enquiry (sample form)</button>\
+        </form>\
+      </div>\
+\
+      <div class="contact-details">\
+        <p><strong>Email:</strong> contact@globalacademicsolutions.com</p>\
+        <p><strong>UK (WhatsApp / calls):</strong> +44 7707 788365</p>\
+        <p><strong>Dubai (WhatsApp / calls):</strong> +971 56 558 7900</p>\
+        <p><strong>Response window:</strong> usually within a few working hours.</p>\
+        <p>You can also send your documents directly by email and request Turnitin/AI checking only.</p>\
+      </div>\
+    </div>\
+  </section>\
+\
+  <!-- FOOTER -->\
+  <footer>\
+    <p>\
+      <span class="brand">Global Academic Solutions</span> provides expert academic support including tutoring, assignment and dissertation guidance,\
+      editing and proofreading, and Turnitin/AI-content checks. You remain responsible for your own submissions and academic integrity policies.\
+    </p>\
+  </footer>\
+\
+</body>\
+</html>\
+}
